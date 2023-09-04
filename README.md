@@ -1,7 +1,7 @@
 # Data Science for Economists 2023-2024 
 🔗 Detailed description: [course wiki-page >>>](http://wiki.cs.hse.ru/Dse_2023-24)
 
-Repository content
+**Repository content:**
 
 | ✅  Topic (short name)|  📝  Class notebooks |
 |--------|--------|
