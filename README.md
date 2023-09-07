@@ -6,7 +6,7 @@
 | ✅  Topic (short name)|  📝  Class notebooks |
 |--------|--------|
 |  Week 1. Entropy |   Class 1: Data manipulation, data visualization |
-|   |   🔗Notebook >>> |
+|   |   🔗[Notebook v1](https://github.com/Shuaynat/DSE-23-24/blob/b8ac97748127ebea5f59f821c33ae4e8b1ae248c/01-classes/DS23_ICEF_class1.ipynb), [Notebook v2](https://github.com/Shuaynat/DSE-23-24/blob/b8ac97748127ebea5f59f821c33ae4e8b1ae248c/01-classes/DS23_ICEF_class1_sp.ipynb) |
 |  Week 2. Kelly criterion |   Class 2: group by, reshape and join|
 |   |   🔗 Notebook >>> |
 |  Week 3. Trees |   Class 3: Trees|
