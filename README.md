@@ -8,7 +8,7 @@
 |  Week 1. Entropy |   Class 1: Data manipulation, data visualization |
 |   |   🔗[Notebook v1](https://github.com/Shuaynat/DSE-23-24/blob/b8ac97748127ebea5f59f821c33ae4e8b1ae248c/01-classes/DS23_ICEF_class1.ipynb), [Notebook v2](https://github.com/Shuaynat/DSE-23-24/blob/b8ac97748127ebea5f59f821c33ae4e8b1ae248c/01-classes/DS23_ICEF_class1_sp.ipynb) |
 |  Week 2. Kelly criterion |   Class 2: group by, reshape and join|
-|   |   🔗 [Notebook class 2](https://github.com/Shuaynat/DSE-23-24/blob/main/02-classes/DS23_ICEF_class2.ipynb), [Notebook class 2 solutions](https://github.com/Shuaynat/DSE-23-24/blob/main/02-classes/DS23_ICEF_class2_solutions.ipynb) >>> |
+|   |   🔗 [Notebook class 2](https://github.com/Shuaynat/DSE-23-24/blob/main/02-classes/DS23_ICEF_class2.ipynb), [Notebook 2 solutions](https://github.com/Shuaynat/DSE-23-24/blob/main/02-classes/DS23_ICEF_class2_solutions.ipynb) >>> |
 |  Week 3. Trees |   Class 3: Trees|
 |   |   🔗 Notebook >>> |
 |  Week 4. Random Forest and data-splitting |   Class 4: RF, CV, feauture importance|
