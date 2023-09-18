@@ -1,0 +1,167 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+\usepackage{physics}
+
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{DSE, ICEF, Fall 2023}
+\chead{}
+\rhead{HA-01, theory}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+%\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\plim}{plim}
+\DeclareMathOperator{\pCorr}{\mathrm{p}\mathbb{C}\mathrm{orr}}
+
+
+\newcommand \hb{\hat{\beta}}
+\newcommand \hs{\hat{\sigma}}
+\newcommand \htheta{\hat{\theta}}
+\newcommand \s{\sigma}
+\newcommand \hy{\hat{y}}
+\newcommand \hY{\hat{Y}}
+\newcommand \e{\varepsilon}
+\newcommand \he{\hat{\e}}
+\newcommand \z{z}
+\newcommand \hVar{\widehat{\Var}}
+\newcommand \hCorr{\widehat{\Corr}}
+\newcommand \hCov{\widehat{\Cov}}
+\newcommand \cN{\mathcal{N}}
+\newcommand \RR{\mathbb{R}}
+\newcommand \NN{\mathbb{N}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\dBin}{\mathrm{Bin}}
+
+
+\begin{document}
+
+Note: you may use calculator or computer to find extremum points if you can't solve FOC by hand, 
+but you should clearly state the functions that you optimize.
+
+
+\begin{enumerate}
+\item You are guessing the value of binomial random variable $X$ with $n=3$ and real probability of success $p=0.3$.
+\begin{enumerate}
+    \item Find the entropy $H(X)$. 
+    \item Now imagine that you wrongly assume that $X$ has binomial distribution with $n=3$ and $q=0.5$.
+    Find the cross-entropy $CE(\dBin(n=3, p=0.2)||\dBin(n=3, q=0.5))$.
+\end{enumerate}
+\item You may play a favorable game infinitely many times. 
+Your bet in round $n$ is multiplied by a random varibales $K_n$ with distribution given by 
+
+\begin{tabular}{*{4}{c}}
+    \toprule
+    $x$ & $0$ & $5$ & $10$  \\
+    \midrule
+    $\P(K_n=x)$ & $1/2$ & $1/4$ & $1/4$ \\
+    \bottomrule
+\end{tabular}
+
+The random variables $K_n$ are independent. 
+You optimize the long-term interest rate. 
+Which proportion of you current wellfare should you bet in every round of this game?
+
+\item There is a race with three horses, $A$, $B$ or $C$ and you may receive one of the two signals: $S=1$ or $S=2$.
+The joint distribution of the signal and winning horse is given by:
+
+\begin{tabular}{*{4}{c}}
+    \toprule
+    & $W=A$ & $W=B$ & $W=C$ \\
+    \midrule
+    $S=1$ & 0.1 & 0.2 & 0.3  \\
+    $S=2$ & 0.2 & 0.1 & 0.1  \\
+    \bottomrule
+\end{tabular}
+
+If the horse wins your bet on this horse is multiplied by inverse unconditional  probability that this horse wins, 
+for example a bet on a horse $A$ is multiplied by $1/0.3$ if $A$ wins. 
+
+You optimize the long-term interest rate and you can bet infinitely many times. 
+
+\begin{enumerate}
+    \item For each signal find the optimal proportions to divide your bet.
+    \item Calculate the conditional entropy $H(W|S)$.
+    \item What is the highest long-term interest rate that you can achieve?
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
+
