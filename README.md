@@ -10,7 +10,7 @@
 |  Week 2. Kelly criterion |   Class 2: group by, reshape and join|
 |   |   🔗 [Notebook class 2](https://github.com/Shuaynat/DSE-23-24/blob/main/02-classes/DS23_ICEF_class2.ipynb), [Notebook 2 solutions](https://github.com/Shuaynat/DSE-23-24/blob/main/02-classes/DS23_ICEF_class2_solutions.ipynb) >>> |
 |  Week 3. Trees |   Class 3: Trees|
-|   |   🔗 Notebook >>> |
+|   |   🔗 [Notebook class 3](https://github.com/limph0nimph/DSE-23-24/blob/main/03-classes/DS_ICEF_class3_trees_with_theory.ipynb) >>> |
 |  Week 4. Random Forest and data-splitting |   Class 4: RF, CV, feauture importance|
 |   |   🔗 Notebook >>> |
 |  Week 5. Gradient boosting |   Class 5: Boostings|
