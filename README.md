@@ -12,9 +12,9 @@
 |  Week 3. Trees |   Class 3: Trees|
 |   |   🔗 [Notebook class 3](https://github.com/limph0nimph/DSE-23-24/blob/main/03-classes/DS_ICEF_class3_trees_with_theory.ipynb) >>> |
 |  Week 4. Random Forest and data-splitting |   Class 4: RF, CV, feauture importance|
-|   |   🔗 Notebook >>> |
+|   |   🔗 [Notebook class 4]()>>> |
 |  Week 5. Gradient boosting |   Class 5: Boostings|
-|   |   🔗 Notebook >>> |
+|   |   🔗 [Notebook class 5]  (https://github.com/Shuaynat/DSE-23-24/blob/main/05-classes/Copy_of_DS23_ICEF_class5_yn.ipynb) >>>|
 |  Week 6. Bootstrap |   Class 6: Hypothesis testing|
 |   |   🔗 Notebook >>> |
 |  Week 7.  Matrices in regression |   Class 7: Matrices|
