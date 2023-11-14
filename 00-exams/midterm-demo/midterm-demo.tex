@@ -1,0 +1,168 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+\usepackage{physics}
+
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{DSE, ICEF, Fall 2023}
+\chead{}
+\rhead{Midterm-demo}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+%\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\plim}{plim}
+\DeclareMathOperator{\pCorr}{\mathrm{p}\mathbb{C}\mathrm{orr}}
+
+
+\newcommand \hb{\hat{\beta}}
+\newcommand \hs{\hat{\sigma}}
+\newcommand \htheta{\hat{\theta}}
+\newcommand \s{\sigma}
+\newcommand \hy{\hat{y}}
+\newcommand \hY{\hat{Y}}
+\newcommand \e{\varepsilon}
+\newcommand \he{\hat{\e}}
+\newcommand \z{z}
+\newcommand \hVar{\widehat{\Var}}
+\newcommand \hCorr{\widehat{\Corr}}
+\newcommand \hCov{\widehat{\Cov}}
+\newcommand \cN{\mathcal{N}}
+\newcommand \RR{\mathbb{R}}
+\newcommand \NN{\mathbb{N}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\dBin}{\mathrm{Bin}}
+
+
+\begin{document}
+
+
+
+\begin{enumerate}
+\item The random variable $X$ takes three values: $1$, $2$ and $3$ with probabilities $p_1$, $p_2$ and $p_3$.
+
+How the entropy of $X$ will change if we split each value $v$ into two new values, $v-0.1$ and $v+0.1$, 
+with equal probabilities $p_v/2$?
+    
+
+\item The random variable $X$ takes three values: $1$, $2$ and $3$. 
+There are two probability measuers, $p$ and $q$, $\P(X=1) = 0.2$, $\P(X=2) = 0.3$, $\P(X=3) = 0.5$.
+
+\begin{enumerate}
+    \item Find the probabilities $Q(X=1)$, $Q(X=2)$, $Q(X=3)$ that maximize cross-entropy $CE(p||q)$.
+    \item Find the probabilities $Q(X=1)$, $Q(X=2)$, $Q(X=3)$ that maximize cross-entropy $CE(q||p)$.
+\end{enumerate}
+
+Hint: you may use python if you can't solve the first order conditions by hand. 
+
+\item Consider the 1\$ lottery ticket that pays you either 5\$ or nothing with equal probabilities.
+
+How much of your current wellfare should you invest in this lottery to maximize the long-term interest rate?
+
+\item The response variable is binary. 
+Elon Musk has split the node of a tree according to the new X-criterion
+into two non-empty child nodes. 
+
+Can the Gini impurity index increase after this splitting?
+
+
+\item I have a toy dataset of 5 observations. 
+All values of all variables are pairwise different.
+
+Consider the random forest algorithm. 
+
+\begin{enumerate}
+    \item What is the probability that the first tree will use five identical observations?
+    \item What is the probability that the second tree will use all five initial observations?
+\end{enumerate}
+\item Random variables $y_1$, $y_2$, \ldots, $y_n$ is the initial random sample from uniform 
+distribution on $[0;1]$. 
+Consider one of the bootstrap samples, $y_1^*$, $y_2^*$, \ldots, $y_n^*$.
+
+\begin{enumerate}
+    \item What is the probability that $y_5$ will be included exactly 3 times in the bootstrap sample?
+    \item What is the limit of probability in the point (a) when $n\to\infty$?
+    \item Find the probability $\P(\max\{y_1, \ldots, y_n\} > \max\{y_1^*, \ldots, y_n^*\})$.
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}
+
