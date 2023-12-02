@@ -1,0 +1,190 @@
+% arara: xelatex
+\documentclass[12pt]{article}
+
+\usepackage{physics}
+
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering}
+
+\usepackage{amsmath, amsfonts, amssymb} % куча стандартных математических плюшек
+
+\usepackage{comment}
+
+\usepackage[top=2cm, left=1.2cm, right=1.2cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption}
+
+\usepackage{url} % to use \url{link to web}
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{DSE, ICEF, Fall 2023}
+\chead{}
+\rhead{Midterm}
+\lfoot{}
+\cfoot{DON'T PANIC}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\usepackage{tcolorbox} % рамочки!
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет Последний день Помпеи}
+% \listoftodos - печатает все поставленные \todo'шки
+
+
+% более красивые таблицы
+\usepackage{booktabs}
+% заповеди из докупентации:
+% 1. Не используйте вертикальные линни
+% 2. Не используйте двойные линии
+% 3. Единицы измерения - в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
+%\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+%\setlist[enumerate, 2]{label=\asbuk*),ref=\asbuk*}
+
+%% эконометрические сокращения
+\DeclareMathOperator{\Cov}{\mathbb{C}ov}
+\DeclareMathOperator{\Corr}{\mathbb{C}orr}
+\DeclareMathOperator{\Var}{\mathbb{V}ar}
+
+\let\P\relax
+\DeclareMathOperator{\P}{\mathbb{P}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\tr}{trace}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\plim}{plim}
+\DeclareMathOperator{\pCorr}{\mathrm{p}\mathbb{C}\mathrm{orr}}
+
+
+\newcommand \hb{\hat{\beta}}
+\newcommand \hs{\hat{\sigma}}
+\newcommand \htheta{\hat{\theta}}
+\newcommand \s{\sigma}
+\newcommand \hy{\hat{y}}
+\newcommand \hY{\hat{Y}}
+\newcommand \e{\varepsilon}
+\newcommand \he{\hat{\e}}
+\newcommand \z{z}
+\newcommand \hVar{\widehat{\Var}}
+\newcommand \hCorr{\widehat{\Corr}}
+\newcommand \hCov{\widehat{\Cov}}
+\newcommand \cN{\mathcal{N}}
+\newcommand \RR{\mathbb{R}}
+\newcommand \NN{\mathbb{N}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\dBin}{\mathrm{Bin}}
+
+
+\begin{document}
+
+
+
+\begin{enumerate}
+
+\item Let $p$ be the equiprobable distribution on natural numbers from 1 to 3, 
+and $q$ be the equiprobable distribution on natural numbers from 1 to 6.
+
+Calculate $CE(q||p)$ and $CE(p||q)$.
+
+
+\item The random variable $Y_i$ are independent identically distributed and take 
+the values $1$, $2$ and $3$ with unknown probabilities $p_1 + p_2 + p_3 = 1$.
+
+You have a sample of 1000 observations with $\bar y = 2$. 
+The law of large numbers allows you to assume that $\E(Y_i) = 2$.
+
+Estimate $\hat p_1$, $\hat p_2$ and $\hat p_3$ if you believe in the most unpredictable world given observed constraints. 
+
+Hint: you should maximize the entropy of $Y_i$ given that $\E(Y_i) = 2$.
+
+
+\item We play a game. 
+I flip a fair coin. 
+If the coin shows head then you get your stake doubled with probability $0.5$ and you get nothing with probability $0.5$.
+If the coin shows tail then you get your stake doubled with probability $0.9$ and you get nothing with probability $0.1$.
+
+You maximize long-term interest rate. 
+\begin{enumerate}
+    \item How much of your current fortune your should invest if you make the stake \textit{before} the coin toss?
+    \item How much of your current fortune your should invest if you make the stake \textit{after} the coin toss 
+    and you know the result of the toss?
+\end{enumerate}
+
+
+\item The response variable is binary. 
+Elon Musk minimizes the Gini impurity index and splits the node of a tree 
+into two non-empty child nodes.
+
+Provide an example for each case or prove that the case is not possible: 
+\begin{enumerate}
+    \item The impurity of both child nodes is lower than the impurity of the original node. 
+    \item The impurity of the left child node is lower than the impurity of the original node,
+    and the impurity of the right child node is higher. 
+\end{enumerate}
+
+
+\item Elon Musk forecasts the scalar random variable $y$ using the ensemble of $n$ models.
+The model number $i$ provides its own forecast $\hat y_i$ with $\Corr(y, \hat y_i) = 0.1$.
+Models are trained on random subsets of the initial dataset and hence their forecasts 
+are correlated, $\Corr(\hat y_i, \hat y_j) = 0.2$ for $i \neq j$. 
+The variances of the forecasts of each model are equal, $\Var(\hat y_1) = \Var(\hat y_2) = \ldots$ 
+
+Elon Musk considers the ensemble forecast $\hat y = \sum \hat y_i / n$. 
+
+\begin{enumerate}
+    \item Find $\Corr(\hat y, y)$.
+    \item Find the limit $\Corr(\hat y, y)$ when $n\to \infty$.
+\end{enumerate}
+
+Hint: please be careful, in this problem $i$ is the number of a model and not the number of an observation. 
+
+\item Consider the naive bootstrap procedure. The initial sample consists of $n$ observations.
+Consider the random variable $N_1$ — the number of copies of the first initial observation in a bootstrap sample.
+
+Assume that the number of observations $n$ is very very big. 
+\begin{enumerate}
+    \item Find $\P(N_1 = 0)$ and $\P(N_1 = 1)$.
+    \item Find the general formula $\P(N_1 = k)$. 
+\end{enumerate}
+
+Hint: you know the name of this distribution :)
+
+\end{enumerate}
+
+
+\end{document}
+
